@@ -1,0 +1,5 @@
+init:
+  name: yushen-prod
+  config:
+    age: ${random.int(30)}
+    sex: male

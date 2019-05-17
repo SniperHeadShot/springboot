@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+# Actuator 健康检查
+management:
+  endpoint:
+    health:
+      show-details: always # /actuator/health 显示详情
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info"]
