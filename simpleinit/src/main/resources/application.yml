@@ -1,13 +1,8 @@
-spring:
-  profiles:
-    active: dev
+server:
+  port: 8080
 
-# Actuator 健康检查
-management:
-  endpoint:
-    health:
-      show-details: always # /actuator/health 显示详情
-  endpoints:
-    web:
-      exposure:
-        include: ["health","info"]
+spring:
+  application:
+    name: springboot-simpleinit
+  profiles:
+    active: prod

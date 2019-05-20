@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName DemonstrateController
- * @Description 演示主类
+ * @Description 读取配置文件内容
  * @Author ZhengYu
  * @Version: 1.0
  * @Create: 2019/5/17 17:16

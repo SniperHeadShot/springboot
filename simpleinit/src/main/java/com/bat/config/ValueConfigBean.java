@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @ClassName User
- * @Description 测试_将配置文件中的数据赋值给实体类
+ * @Description 将默认配置文件 application.properties/application.yml 中的配置赋值给实体类
  * @Author ZhengYu
  * @Version: 1.0
  * @Create: 2019/5/17 17:25
