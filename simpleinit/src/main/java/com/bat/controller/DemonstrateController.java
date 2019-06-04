@@ -4,6 +4,7 @@ import com.bat.config.PropertiesConfigBean;
 import com.bat.config.ValueConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemonstrateController {
 
     @Autowired
+    private Environment environment;
+    @Autowired
     private ValueConfigBean valueConfigBean;
-
     @Autowired
     private PropertiesConfigBean propertiesConfigBean;
 
@@ -27,26 +29,54 @@ public class DemonstrateController {
     private String userName;
 
     /**
-     * @Param []
-     * @Return java.lang.String
-     * @Author ZhengYu
-     * @Description: 测试将*.yml内的属性读取到实体类
-     * @Date 2019/5/17
+     * 读取 *.yml 文件内的配置[方式1]
+     *
+     * @param
+     * @return java.lang.String
+     * @author ZhengYu
+     * @date 2019/6/4
      */
-    @GetMapping("/value")
-    public String demonstrateSpringboot() {
-        return "Hello " + userName + "! " + valueConfigBean.toString();
+    @GetMapping("/yml/config/method1")
+    public String getApplicationConfigMethod1() {
+        return "读取 *.yml 文件内的配置[方式1] ... " + environment.getProperty("init.name");
     }
 
     /**
-     * @Param []
-     * @Return java.lang.String
-     * @Author ZhengYu
-     * @Description: 测试将*.properties内的属性读取到实体类
-     * @Date 2019/5/17
+     * 读取 *.yml 文件内的配置[方式2]
+     *
+     * @param
+     * @return java.lang.String
+     * @author ZhengYu
+     * @date 2019/6/4
      */
-    @GetMapping("/prop")
+    @GetMapping("/yml/config/method2")
+    public String getApplicationConfigMethod2() {
+        return "读取 *.yml 文件内的配置[方式2] ... " + userName;
+    }
+
+    /**
+     * 读取 *.yml 文件内的配置[方式3]
+     *
+     * @param
+     * @return java.lang.String
+     * @author ZhengYu
+     * @date 2019/6/4
+     */
+    @GetMapping("/yml/config/method3")
+    public String getApplicationConfigMethod3() {
+        return "读取 *.yml 文件内的配置[方式3] ... " + valueConfigBean.getName();
+    }
+
+    /**
+     * 读取 *.properties 文件内的配置
+     *
+     * @param
+     * @return java.lang.String
+     * @author ZhengYu
+     * @date 2019/6/4
+     */
+    @GetMapping("/properties/config")
     public String additionalProperties() {
-        return "Hello " + propertiesConfigBean.getName() + "! " + valueConfigBean.toString();
+        return "读取 *.properties 文件内的配置 ... " + propertiesConfigBean.getName();
     }
 }

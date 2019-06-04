@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @Version: 1.0
  * @Create: 2019/5/17 17:25
  **/
-@ConfigurationProperties(prefix = "init.config") //表明该类为配置属性类
+@ConfigurationProperties(prefix = "init")
 @Component
 @Data
 public class ValueConfigBean {

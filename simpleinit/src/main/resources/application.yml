@@ -5,4 +5,4 @@ spring:
   application:
     name: springboot-simpleinit
   profiles:
-    active: prod
+    active: dev
