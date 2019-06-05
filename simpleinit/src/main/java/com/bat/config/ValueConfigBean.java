@@ -18,7 +18,13 @@ public class ValueConfigBean {
 
     private String name;
 
-    private Integer age;
+    private Config config;
 
-    private String sex;
+    @Data
+    public static class Config {
+
+        private Integer age;
+
+        private String sex;
+    }
 }

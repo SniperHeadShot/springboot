@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName DemonstrateController
- * @Description 读取配置文件内容
+ * @Description 读取配置文件内容 测试类
  * @Author ZhengYu
  * @Version: 1.0
  * @Create: 2019/5/17 17:16
  **/
 @RestController
-public class DemonstrateController {
+public class ConfigureDemonstrateController {
 
     @Autowired
     private Environment environment;
@@ -64,7 +64,7 @@ public class DemonstrateController {
      */
     @GetMapping("/yml/config/method3")
     public String getApplicationConfigMethod3() {
-        return "读取 *.yml 文件内的配置[方式3] ... " + valueConfigBean.getName();
+        return "读取 *.yml 文件内的配置[方式3] ... " + valueConfigBean.getName() + valueConfigBean.getConfig().getAge();
     }
 
     /**
