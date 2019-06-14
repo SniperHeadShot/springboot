@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: large-file-plupload
+
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+
+
+#spring:
+#  application:
+#    name: large-file-plupload
+#  http:
+#    multipart:
+#      enabled: true
+#      max-file-size: 20000MB
+#      max-request-size: 100MB
+#      resolve-lazily: true
+#      file-size-threshold: 0
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    mode: HTML5
+#    encoding: UTF-8
+#    content-type: text/html; charset=utf-8
+#    cache: false
+#    check-template: false
+#    enabled: true
+#    template-resolver-order: 0
+#server:
+#  port: 8080
+#  tomcat:
+#    basedir: target/tomcat
+#    accesslog:
+#      enabled: true
+#      directory: logs
+#    max-threads: 200
+#    uri-encoding: UTF-8
+#  error:
+#    path: /error
+#logging:
+#  level:
+#    root: info
+#    com.jusfoun: debug
+#    org.apache: warn
+#    org.hibernate: warn
+#    org.springframework: warn
+#  file: target/logs/log.txt

@@ -6,6 +6,8 @@
     <modules>
         <module>simpleinit</module>
         <module>springdatajpa</module>
+        <module>security</module>
+        <module>plupload</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
