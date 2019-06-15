@@ -1,4 +1,4 @@
-package com.bat.plupload.entity;
+package com.bat.plupload.request;
 
 import lombok.Data;
 

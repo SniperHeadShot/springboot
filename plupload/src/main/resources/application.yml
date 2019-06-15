@@ -9,7 +9,17 @@ spring:
     multipart:
       max-file-size: 1MB
       max-request-size: 10MB
-
+  # redis 配置
+  redis:
+    host: 101.132.45.166
+    port: 6379
+    password: zyagmx1314
+    database: 1
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 500
+        max-wait: -1ms
 
 #spring:
 #  application:

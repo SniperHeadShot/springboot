@@ -4,14 +4,11 @@ import com.bat.plupload.request.PlupLoadRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.FileNotFoundException;
 
 /**
  * @ClassName PlupController
@@ -27,14 +24,15 @@ public class PlupController {
 
     @CrossOrigin
     @PostMapping(value = "/uploadSmallFilePackage", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public void largeFileUpload(@RequestBody MultipartFile file, PlupLoadRequest plupLoadRequest) {
+    public String largeFileUpload(@RequestBody MultipartFile file, PlupLoadRequest plupLoadRequest) {
+        String resultMessage;
         // TODO 校验参数
-        String classPath = null;
-        try {
-            classPath = ResourceUtils.getURL("classpath:").getPath();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        plupLoadRequest.setClasspath(classPath + plupLoadRequest.getProjectUuid() + System.getProperty("file.separator") + plupLoadRequest.getUserUuid());
+
+        // TODO 校验上传任务是否存在
+
+        System.out.println();
+
+        resultMessage = "上传任务开启成功";
+        return resultMessage;
     }
 }

@@ -15,8 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
  **/
 public class PlupServiceImpl implements PlupService {
 
-    private final String UPLOAD_LARGE_FILE_PREFIX = "device:upgrade:upload:";
-
     @Autowired
     private RedisUtils redisUtils;
 
@@ -31,9 +29,6 @@ public class PlupServiceImpl implements PlupService {
      */
     @Override
     public void uploadFile(MultipartFile file, PlupLoadRequest plupLoadRequest) {
-        String redisKey = UPLOAD_LARGE_FILE_PREFIX + plupLoadRequest.getProjectUuid() + ":" + plupLoadRequest.getUserUuid();
-        if (plupLoadRequest.getChunk() == 0) {
 
-        }
     }
 }
