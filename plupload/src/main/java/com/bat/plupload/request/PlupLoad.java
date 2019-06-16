@@ -3,11 +3,10 @@ package com.bat.plupload.request;
 import lombok.Data;
 
 /**
- * @ClassName PlupLoad
- * @Description 大文件上传辅助工具类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/6/13 14:52
+ * 分包上传辅助工具类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/16 11:28
  **/
 @Data
 public class PlupLoad {

@@ -1,31 +1,47 @@
 package com.bat.plupload.util;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName RedisUtils
- * @Description Redis 工具类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/30 11:15
+ * Redis 工具类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/16 11:28
  **/
 @Component
 public class RedisUtils {
 
-    @Autowired
+    @Resource
     private StringRedisTemplate stringRedisTemplate;
 
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+
     /**
-     * @Param [key, value, seconds]
-     * @Return void
-     * @Author ZhengYu
-     * @Description: 将 String 值存入 Redis 并持有 seconds 秒
-     * @Date 2019/5/30
+     * 将 String 值存入 Redis
+     *
+     * @param key   key
+     * @param value value
+     * @author ZhengYu
+     */
+    public void setStringToRedis(String key, String value) {
+        ValueOperations<String, String> stringStringValueOperations = stringRedisTemplate.opsForValue();
+        stringStringValueOperations.set(key, value);
+    }
+
+    /**
+     * 将 String 值存入 Redis 并持有 seconds 秒
+     *
+     * @param key     key
+     * @param value   value
+     * @param seconds 秒数
+     * @author ZhengYu
      */
     public void setStringToRedis(String key, String value, long seconds) {
         ValueOperations<String, String> stringStringValueOperations = stringRedisTemplate.opsForValue();
@@ -33,14 +49,37 @@ public class RedisUtils {
     }
 
     /**
-     * @Param [key]
-     * @Return java.lang.String
-     * @Author ZhengYu
-     * @Description: 从 Redis 中 读取 String 值
-     * @Date 2019/5/30
+     * 从 Redis 中 读取 key 对应的值
+     *
+     * @param key key
+     * @author ZhengYu
      */
     public String getStringFromRedis(String key) {
         ValueOperations<String, String> stringStringValueOperations = stringRedisTemplate.opsForValue();
         return stringStringValueOperations.get(key);
+    }
+
+    /**
+     * 将 Object 值存入 Redis 并持有 seconds 秒
+     *
+     * @param key     key
+     * @param value   value
+     * @param seconds 秒数
+     * @author ZhengYu
+     */
+    public void setObjectToRedis(String key, Object value, long seconds) {
+        ValueOperations<String, Object> stringObjectValueOperations = redisTemplate.opsForValue();
+        stringObjectValueOperations.set(key, value, seconds, TimeUnit.SECONDS);
+    }
+
+    /**
+     * 从 Redis 中 读取 key 对应的值
+     *
+     * @param key key
+     * @author ZhengYu
+     */
+    public Object getObjectFromRedis(String key) {
+        ValueOperations<String, Object> stringObjectValueOperations = redisTemplate.opsForValue();
+        return stringObjectValueOperations.get(key);
     }
 }
