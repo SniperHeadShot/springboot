@@ -21,42 +21,14 @@ spring:
         max-idle: 500
         max-wait: -1ms
 
-#spring:
-#  application:
-#    name: large-file-plupload
-#  http:
-#    multipart:
-#      enabled: true
-#      max-file-size: 20000MB
-#      max-request-size: 100MB
-#      resolve-lazily: true
-#      file-size-threshold: 0
-#  thymeleaf:
-#    prefix: classpath:/templates/
-#    suffix: .html
-#    mode: HTML5
-#    encoding: UTF-8
-#    content-type: text/html; charset=utf-8
-#    cache: false
-#    check-template: false
-#    enabled: true
-#    template-resolver-order: 0
-#server:
-#  port: 8080
-#  tomcat:
-#    basedir: target/tomcat
-#    accesslog:
-#      enabled: true
-#      directory: logs
-#    max-threads: 200
-#    uri-encoding: UTF-8
-#  error:
-#    path: /error
-#logging:
-#  level:
-#    root: info
-#    com.jusfoun: debug
-#    org.apache: warn
-#    org.hibernate: warn
-#    org.springframework: warn
-#  file: target/logs/log.txt
+plupload:
+  # 最大重试次数
+  maxTryCount: 5
+  # 重试间隔(毫秒)
+  tryInterval: 5000
+  # 数据在Redis中的持有时间(秒)
+  fileRedisTime: 60
+  # 文件暂存路径
+  tempPath:
+    windows: "D:\\\\temp"
+    linux: "/tmp/plupload"

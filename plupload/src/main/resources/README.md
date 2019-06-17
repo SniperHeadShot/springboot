@@ -1,1 +1,0 @@
-参考文档： http://www.phpin.net/tools/plupload/

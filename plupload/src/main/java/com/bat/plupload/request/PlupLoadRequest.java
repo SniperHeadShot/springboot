@@ -1,11 +1,10 @@
 package com.bat.plupload.request;
 
+import com.bat.plupload.config.PluploadConfig;
+import com.bat.plupload.util.CommonUtils;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
-
-import java.io.FileNotFoundException;
 
 /**
  * PlupLoad 请求实体
@@ -16,8 +15,6 @@ import java.io.FileNotFoundException;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class PlupLoadRequest extends PlupLoad {
-
-    private final String tempUploadPath = "D:\\temp";
 
     private String projectUuid;
 
@@ -34,8 +31,7 @@ public class PlupLoadRequest extends PlupLoad {
      * @author ZhengYu
      */
     public String getRedisKey() {
-        // return "file:upload:" + getTaskType() + ":" + getProjectUuid() + ":" + getUserUuid() + ":" + getChunk();
-        return "file:upload:" + getProjectUuid() + ":";
+        return "file:upload:" + getTaskType() + ":" + getProjectUuid() + ":" + getUserUuid() + ":";
     }
 
     /**
@@ -44,10 +40,20 @@ public class PlupLoadRequest extends PlupLoad {
      * @return java.lang.String
      * @author ZhengYu
      */
-    public String getFileUploadDir() throws FileNotFoundException {
-        // return ResourceUtils.getURL("classpath:").getPath() + System.getProperty("file.separator") + getProjectUuid() + System.getProperty("file.separator") + getUserUuid();
-        //return ResourceUtils.getURL("classpath:").getPath() + System.getProperty("file.separator") + "static" + System.getProperty("file.separator") + "upload" + System.getProperty("file.separator") + getProjectUuid();
-        return tempUploadPath;
+    public String getFileUploadDir(PluploadConfig pluploadConfig) {
+        String runSystem = CommonUtils.getRunSystem();
+        String fileUploadDirPrefix = null;
+        switch (runSystem) {
+            case "mac":
+            case "windows":
+                fileUploadDirPrefix = pluploadConfig.getTempPath().getWindows();
+                break;
+            case "linux":
+                fileUploadDirPrefix = pluploadConfig.getTempPath().getLinux();
+                break;
+            default:
+        }
+        return fileUploadDirPrefix + System.getProperty("file.separator") + getProjectUuid() + System.getProperty("file.separator") + getTaskType() + System.getProperty("file.separator") + getUserUuid();
     }
 
     /**
