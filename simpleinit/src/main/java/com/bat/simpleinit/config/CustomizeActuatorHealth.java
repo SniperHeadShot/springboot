@@ -1,4 +1,4 @@
-package com.bat.config;
+package com.bat.simpleinit.config;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -7,11 +7,10 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 /**
- * @ClassName CustomizeActuatorHealth
- * @Description 自定义的 /actuator/health 指标项
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/20 13:59
+ * 自定义的 /actuator/health 指标项
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @Component
 public class CustomizeActuatorHealth implements HealthIndicator {

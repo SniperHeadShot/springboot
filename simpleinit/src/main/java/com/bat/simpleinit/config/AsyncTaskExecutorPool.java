@@ -1,4 +1,4 @@
-package com.bat.config;
+package com.bat.simpleinit.config;
 
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
@@ -13,13 +13,11 @@ import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
-
 /**
- * @ClassName AsyncTaskExecutorPool
- * @Description 线程池配置类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/6/5 9:33
+ * 线程池配置类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @Configuration
 public class AsyncTaskExecutorPool implements AsyncConfigurer {
@@ -32,7 +30,6 @@ public class AsyncTaskExecutorPool implements AsyncConfigurer {
     /**
      * 配置线程池
      *
-     * @param
      * @return java.util.concurrent.Executor
      * @author ZhengYu
      * @date 2019/6/5
@@ -53,7 +50,6 @@ public class AsyncTaskExecutorPool implements AsyncConfigurer {
     /**
      * 配置线程任务异常处理
      *
-     * @param
      * @return org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler
      * @author ZhengYu
      * @date 2019/6/5

@@ -1,7 +1,7 @@
-package com.bat.controller;
+package com.bat.simpleinit.controller;
 
-import com.bat.config.PropertiesConfigBean;
-import com.bat.config.ValueConfigBean;
+import com.bat.simpleinit.config.PropertiesConfigBean;
+import com.bat.simpleinit.config.ValueConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName DemonstrateController
- * @Description 读取配置文件内容 测试类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/17 17:16
+ * 读取配置文件内容 测试类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @RestController
 public class ConfigureDemonstrateController {
@@ -31,7 +30,6 @@ public class ConfigureDemonstrateController {
     /**
      * 读取 *.yml 文件内的配置[方式1]
      *
-     * @param
      * @return java.lang.String
      * @author ZhengYu
      * @date 2019/6/4
@@ -44,7 +42,6 @@ public class ConfigureDemonstrateController {
     /**
      * 读取 *.yml 文件内的配置[方式2]
      *
-     * @param
      * @return java.lang.String
      * @author ZhengYu
      * @date 2019/6/4
@@ -57,7 +54,6 @@ public class ConfigureDemonstrateController {
     /**
      * 读取 *.yml 文件内的配置[方式3]
      *
-     * @param
      * @return java.lang.String
      * @author ZhengYu
      * @date 2019/6/4
@@ -70,7 +66,6 @@ public class ConfigureDemonstrateController {
     /**
      * 读取 *.properties 文件内的配置
      *
-     * @param
      * @return java.lang.String
      * @author ZhengYu
      * @date 2019/6/4

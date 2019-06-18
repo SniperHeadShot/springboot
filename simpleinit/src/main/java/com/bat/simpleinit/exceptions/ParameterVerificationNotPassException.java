@@ -1,20 +1,18 @@
-package com.bat.exceptions;
+package com.bat.simpleinit.exceptions;
 
 /**
- * @ClassName ParameterVerificationNotPassException
- * @Description 参数校验未通过通用异常
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/24 18:43
+ * 参数校验未通过通用异常
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 public class ParameterVerificationNotPassException extends RuntimeException {
 
     /**
-     * @Param [message]
-     * @Return
-     * @Author ZhengYu
-     * @Description: 参数校验未通过通用异常
-     * @Date 2019/5/24
+     * 参数校验未通过通用异常
+     *
+     * @param message 异常信息
+     * @author ZhengYu
      */
     public ParameterVerificationNotPassException(String message) {
         super(message);

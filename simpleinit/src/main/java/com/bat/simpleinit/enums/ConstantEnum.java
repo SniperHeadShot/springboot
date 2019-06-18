@@ -1,13 +1,12 @@
-package com.bat.enums;
+package com.bat.simpleinit.enums;
 
-import com.bat.annotation.CodeEntity;
+import com.bat.simpleinit.annotation.CodeEntity;
 
 /**
- * @ClassName ConstantEnum
- * @Description 返回值枚举
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/24 18:09
+ * 返回值枚举
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 public enum ConstantEnum implements CodeEnumInterface {
 

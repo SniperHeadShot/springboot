@@ -1,18 +1,16 @@
-package com.bat.controller;
+package com.bat.simpleinit.controller;
 
-import com.bat.service.AsyncService;
+import com.bat.simpleinit.service.AsyncService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName AsyncDemonstrateController
- * @Description 异步处理任务 测试类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/6/5 10:22
+ * 异步处理任务 测试类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
-
 @RestController
 public class AsyncDemonstrateController {
 
@@ -22,8 +20,6 @@ public class AsyncDemonstrateController {
     /**
      * 传统使用线程池方式
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */
@@ -35,8 +31,6 @@ public class AsyncDemonstrateController {
     /**
      * SpringBoot 使用线程池方式
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */
@@ -48,8 +42,6 @@ public class AsyncDemonstrateController {
     /**
      * SpringBoot 使用线程池方式
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */

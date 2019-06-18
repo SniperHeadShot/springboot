@@ -1,7 +1,7 @@
-package com.bat.response;
+package com.bat.simpleinit.response;
 
-import com.bat.enums.ConstantEnum;
-import com.bat.exceptions.ParameterVerificationNotPassException;
+import com.bat.simpleinit.enums.ConstantEnum;
+import com.bat.simpleinit.exceptions.ParameterVerificationNotPassException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
@@ -17,11 +17,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @ClassName GlobalExceptionHandler
- * @Description 全局错误处理
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/6/4 16:49
+ * 全局错误处理
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @ControllerAdvice
 public class GlobalExceptionHandler {

@@ -1,15 +1,14 @@
-package com.bat;
+package com.bat.simpleinit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * @ClassName SimpleInitApplication
- * @Description Springboot基础知识演示
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/17 17:12
+ * Springboot基础知识演示
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @EnableAsync
 @SpringBootApplication

@@ -1,20 +1,18 @@
-package com.bat.enums;
+package com.bat.simpleinit.enums;
 
-import com.bat.annotation.CodeEntity;
+import com.bat.simpleinit.annotation.CodeEntity;
 
 /**
- * @ClassName CodeEnumInterface
- * @Description 通过反射将注解值读出来
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/24 18:17
+ * 通过反射将注解值读出来
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 public interface CodeEnumInterface {
 
     /**
      * 使用反射获取注解信息
      *
-     * @param
      * @return com.bat.springcloud.annotation.CodeEntity
      * @author ZhengYu
      * @date 2019/6/4
@@ -31,7 +29,6 @@ public interface CodeEnumInterface {
     /**
      * 是否成功
      *
-     * @param
      * @return boolean
      * @author ZhengYu
      * @date 2019/6/4
@@ -43,7 +40,6 @@ public interface CodeEnumInterface {
     /**
      * 状态码
      *
-     * @param
      * @return int
      * @author ZhengYu
      * @date 2019/6/4
@@ -55,7 +51,6 @@ public interface CodeEnumInterface {
     /**
      * 提示信息
      *
-     * @param
      * @return java.lang.String
      * @author ZhengYu
      * @date 2019/6/4

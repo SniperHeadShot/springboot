@@ -1,15 +1,14 @@
-package com.bat.config;
+package com.bat.simpleinit.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @ClassName User
- * @Description 将默认配置文件 application.properties/application.yml 中的配置赋值给实体类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/17 17:25
+ * 将默认配置文件 application.properties/application.yml 中的配置赋值给实体类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @ConfigurationProperties(prefix = "init")
 @Component

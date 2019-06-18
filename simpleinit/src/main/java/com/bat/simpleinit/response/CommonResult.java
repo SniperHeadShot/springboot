@@ -1,16 +1,14 @@
-package com.bat.response;
+package com.bat.simpleinit.response;
 
-import com.bat.enums.ConstantEnum;
+import com.bat.simpleinit.enums.ConstantEnum;
 import lombok.Data;
 
 /**
- * @ClassName CommonResult
- * @Description 通用返回结构体
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/24 17:41
+ * 通用返回结构体
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
-
 @Data
 public class CommonResult<T> {
 

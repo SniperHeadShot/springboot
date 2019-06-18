@@ -1,4 +1,4 @@
-package com.bat.service;
+package com.bat.simpleinit.service;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.springframework.scheduling.annotation.Async;
@@ -10,11 +10,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName AsyncService
- * @Description 异步执行任务
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/6/5 9:55
+ * 异步执行任务
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @Service
 public class AsyncService {
@@ -22,8 +21,6 @@ public class AsyncService {
     /**
      * 传统使用线程池方式
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */
@@ -40,8 +37,6 @@ public class AsyncService {
     /**
      * SpringBoot 使用线程池方式
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */
@@ -54,8 +49,6 @@ public class AsyncService {
     /**
      * SpringBoot 使用线程池方式[异常处理]
      *
-     * @param
-     * @return void
      * @author ZhengYu
      * @date 2019/6/5
      */
