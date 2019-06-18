@@ -7,6 +7,7 @@
         <module>simpleinit</module>
         <module>springdatajpa</module>
         <module>plupload</module>
+        <module>easyexcel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
