@@ -1,4 +1,4 @@
-package com.bat.DO;
+package com.bat.springdatajpa.entity;
 
 import lombok.Data;
 
@@ -11,11 +11,10 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
- * @ClassName UserDO
- * @Description User实体类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/21 11:52
+ * User实体类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @Data
 @Entity

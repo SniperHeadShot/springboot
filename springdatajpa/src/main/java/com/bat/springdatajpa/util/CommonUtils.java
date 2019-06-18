@@ -1,22 +1,20 @@
-package com.bat.util;
+package com.bat.springdatajpa.util;
 
 import java.util.UUID;
 
 /**
- * @ClassName CommonUtils
- * @Description 工具类
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/22 10:40
+ * 工具类
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 public class CommonUtils {
 
     /**
-     * @Param []
-     * @Return java.lang.String
-     * @Author ZhengYu
-     * @Description: UUID 生成器
-     * @Date 2019/5/22
+     * UUID 生成器
+     *
+     * @return java.lang.String
+     * @author ZhengYu
      */
     public static String getRandomUuid() {
         return UUID.randomUUID().toString().replace("-", "");

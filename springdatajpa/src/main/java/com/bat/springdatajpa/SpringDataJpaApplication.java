@@ -1,14 +1,13 @@
-package com.bat;
+package com.bat.springdatajpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @ClassName SpringDataJpaApplication
- * @Description JPA
- * @Author ZhengYu
- * @Version: 1.0
- * @Create: 2019/5/21 11:27
+ * JPA
+ *
+ * @author ZhengYu
+ * @version 1.0 2019/6/18 14:09
  **/
 @SpringBootApplication
 public class SpringDataJpaApplication {
