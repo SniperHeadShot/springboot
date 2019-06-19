@@ -6,9 +6,9 @@ package com.bat.easyexcel.exception;
  * @author ZhengYu
  * @version 1.0 2019/6/18 16:52
  **/
-public class ExcelException extends Exception {
+public class ExcelOperateException extends RuntimeException {
 
-    public ExcelException(String message) {
+    public ExcelOperateException(String message) {
         super(message);
     }
 }

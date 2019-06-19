@@ -1,8 +1,6 @@
 package com.bat.easyexcel.service;
 
-import com.bat.easyexcel.entity.ExportDTO;
-
-import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Excel 导出接口
@@ -10,7 +8,7 @@ import java.util.List;
  * @author ZhengYu
  * @version 1.0 2019/6/18 14:40
  **/
-public interface ExportExcelService {
+public interface ExcelOperateService {
 
     /**
      * 导入数据
@@ -23,8 +21,8 @@ public interface ExportExcelService {
     /**
      * 导出数据
      *
-     * @param exportDTOList 待导出数据
+     * @param response 响应体
      * @author ZhengYu
      */
-    void exportWithExcel(List<ExportDTO> exportDTOList);
+    void exportWithExcel(HttpServletResponse response);
 }
