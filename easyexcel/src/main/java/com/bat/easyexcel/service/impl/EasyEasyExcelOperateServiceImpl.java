@@ -4,7 +4,7 @@ import com.bat.easyexcel.entity.ExportDTO;
 import com.bat.easyexcel.entity.GenerateExportData;
 import com.bat.easyexcel.entity.GenerateExportParam;
 import com.bat.easyexcel.exception.ExcelOperateException;
-import com.bat.easyexcel.service.ExcelOperateService;
+import com.bat.easyexcel.service.EasyExcelOperateService;
 import com.bat.easyexcel.util.ExcelOperateUtil;
 import com.bat.easyexcel.util.ExportExcelStyleUtil;
 import com.bat.easyexcel.util.TempExcelDataUtil;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * @version 1.0 2019/6/18 14:40
  **/
 @Service
-public class ExcelOperateOperateServiceImpl implements ExcelOperateService {
+public class EasyEasyExcelOperateServiceImpl implements EasyExcelOperateService {
 
     /**
      * 导入数据

@@ -1,6 +1,6 @@
 package com.bat.easyexcel.controller;
 
-import com.bat.easyexcel.service.ExcelOperateService;
+import com.bat.easyexcel.service.EasyExcelOperateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 public class EasyExcelController {
 
     @Autowired
-    private ExcelOperateService excelOperateService;
+    private EasyExcelOperateService easyExcelOperateService;
 
     @GetMapping("/export")
     public void excelExport(HttpServletResponse response) {
-        excelOperateService.exportWithExcel(response);
+        easyExcelOperateService.exportWithExcel(response);
     }
 }

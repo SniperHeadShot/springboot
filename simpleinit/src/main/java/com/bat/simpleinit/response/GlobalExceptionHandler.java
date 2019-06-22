@@ -1,7 +1,8 @@
 package com.bat.simpleinit.response;
 
-import com.bat.simpleinit.enums.ConstantEnum;
-import com.bat.simpleinit.exceptions.ParameterVerificationNotPassException;
+import com.bat.common.enums.ConstantEnum;
+import com.bat.common.exceptions.ParameterVerificationNotPassException;
+import com.bat.common.response.CommonResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;

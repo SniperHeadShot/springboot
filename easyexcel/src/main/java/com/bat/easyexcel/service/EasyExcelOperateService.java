@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author ZhengYu
  * @version 1.0 2019/6/18 14:40
  **/
-public interface ExcelOperateService {
+public interface EasyExcelOperateService {
 
     /**
      * 导入数据

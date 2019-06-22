@@ -1,6 +1,6 @@
-package com.bat.simpleinit.enums;
+package com.bat.common.enums;
 
-import com.bat.simpleinit.annotation.CodeEntity;
+import com.bat.common.annotation.CodeEntity;
 
 /**
  * 通过反射将注解值读出来

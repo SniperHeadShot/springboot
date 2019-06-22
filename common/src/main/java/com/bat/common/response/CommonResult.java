@@ -1,6 +1,6 @@
-package com.bat.simpleinit.response;
+package com.bat.common.response;
 
-import com.bat.simpleinit.enums.ConstantEnum;
+import com.bat.common.enums.ConstantEnum;
 import lombok.Data;
 
 /**

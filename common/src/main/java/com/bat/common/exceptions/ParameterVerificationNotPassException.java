@@ -1,4 +1,4 @@
-package com.bat.simpleinit.exceptions;
+package com.bat.common.exceptions;
 
 /**
  * 参数校验未通过通用异常
