@@ -82,7 +82,7 @@ public class PlupServiceImpl implements PlupService {
                         }
                     }
                     if (objectFromRedis == null) {
-                        logger.info("重试次数超时，任务结束!!!");
+                        logger.info("重试次数过多，任务结束!!!");
                         // TODO 发送失败通知
                         // TODO 停止线程任务
                         // TODO 清理动作

@@ -20,6 +20,10 @@ public class PlupLoadRequest extends PlupLoad {
 
     private String userUuid;
 
+    private String deviceUuidArr;
+
+    private String action;
+
     /**
      * 任务类型 device:revert[数据还原]
      */
