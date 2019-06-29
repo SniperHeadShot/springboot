@@ -8,7 +8,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -51,10 +50,10 @@ public class DynamicExecutionTaskUtil {
         }
         boolean cancelTaskFlag = closeDynamicTask(uniqueKey);
         if (!cancelTaskFlag) {
-            log.info("定时任务: uniqueKey={}, cron={} 取消失败, 系统时间: {}", uniqueKey, cron, LocalDateTime.now().format(DATETIME_FORMATTER));
+            return false;
         }
         ScheduledFuture<?> schedule = threadPoolTaskScheduler.schedule(runnable, new CronTrigger(cron));
-        log.info("成功创建定时任务: uniqueKey={}, cron={}, 系统时间: {}", uniqueKey, cron, LocalDateTime.now().format(DATETIME_FORMATTER));
+        log.info("定时任务 uniqueKey=[{}] cron=[{}] 创建成功", uniqueKey, cron);
         systemTaskMap.put(uniqueKey, schedule);
         return true;
     }
@@ -76,7 +75,7 @@ public class DynamicExecutionTaskUtil {
         }
         boolean cancelTaskFlag = scheduledFuture.cancel(true);
         if (!cancelTaskFlag) {
-            log.info("定时任务: uniqueKey={}, cron={} 取消失败, 系统时间: {}", uniqueKey, LocalDateTime.now().format(DATETIME_FORMATTER));
+            log.info("定时任务 uniqueKey=[{}] 关闭失败", uniqueKey);
         }
         return cancelTaskFlag;
     }
