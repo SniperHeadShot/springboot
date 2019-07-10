@@ -8,6 +8,7 @@
         <module>springdatajpa</module>
         <module>plupload</module>
         <module>easyexcel</module>
+        <module>quartz</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
