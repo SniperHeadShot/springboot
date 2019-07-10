@@ -1,5 +1,7 @@
 package com.bat.quartz;
 
+import com.bat.quartz.config.QuartzManager;
+import com.bat.quartz.task.TestJob;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,5 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class QuartzApplication {
     public static void main(String[] args) {
         SpringApplication.run(QuartzApplication.class, args);
+
+        QuartzManager.addJob(TestJob.class,"123456");
+        QuartzManager.addJob(TestJob.class,"654321");
     }
 }
