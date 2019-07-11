@@ -3,7 +3,6 @@ package com.bat.quartz.task;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 
 /**
  * 定时任务实现类
@@ -15,7 +14,7 @@ import org.quartz.JobExecutionException;
 public class TestJob implements Job {
 
     @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        log.info("读取到参数 ===> [{}]", jobExecutionContext.getJobDetail().getJobDataMap().get("projectUuid"));
+    public void execute(JobExecutionContext jobExecutionContext) {
+        log.info("定时任务执行 参数=[{}], 端口=[{}]", jobExecutionContext.getJobDetail().getJobDataMap().get("projectUuid"));
     }
 }

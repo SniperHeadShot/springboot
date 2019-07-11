@@ -22,11 +22,5 @@
             <artifactId>easyexcel</artifactId>
             <version>${easy.excel.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.bat</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>
