@@ -1,5 +1,6 @@
 package com.bat.simpleinit.controller;
 
+import com.bat.common.annotation.CustomMethodDesc;
 import com.bat.simpleinit.config.PropertiesConfigBean;
 import com.bat.simpleinit.config.ValueConfigBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,7 @@ public class ConfigureDemonstrateController {
      * @author ZhengYu
      * @date 2019/6/4
      */
+    @CustomMethodDesc("读取 *.properties 文件内的配置")
     @GetMapping("/properties/config")
     public String additionalProperties() {
         return "读取 *.properties 文件内的配置 ... " + propertiesConfigBean.getName();

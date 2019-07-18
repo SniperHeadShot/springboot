@@ -14,4 +14,4 @@ management:
     web:
       exposure:
         exclude: ["heapdump"]  # 禁用某些指标
-        include: ["health","info"]  # 启用某些指标
+        include: ["health","info","loggers","sessions"]  # 启用某些指标
