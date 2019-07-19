@@ -9,6 +9,7 @@
         <module>plupload</module>
         <module>easyexcel</module>
         <module>quartz</module>
+        <module>retrying</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
