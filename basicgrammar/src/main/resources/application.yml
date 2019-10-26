@@ -1,0 +1,16 @@
+server:
+  port: 15233
+
+spring:
+  profiles:
+    active: dev
+
+# @Value 注解使用
+custom:
+  menu001:
+    info:
+      username: root
+      password: 1234
+    app:
+      key: sniper
+      value: 123456
