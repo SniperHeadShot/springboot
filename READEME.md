@@ -15,12 +15,20 @@ SpringBoot 整理总结
 > 3. 从外部配置文件(.properties)中取值
 > 4. 从配置文件中读取配置为静态变量
 
-#### menu002 @Import 导入普通的java类，并将其声明成一个bean
+#### menu002 三种将java类注入为IOC容器bean的方式
 
-> 三种将java类注入为IOC容器bean的方式
->   1. 直接导入普通的 Java 类
->   2. 配合自定义的 ImportSelector 使用
->   3. 配合 ImportBeanDefinitionRegistrar 使用
+> 1. 使用@Import注解导入普通的 Java 类
+> 2. 配合自定义的 ImportSelector 使用
+> 3. 配合 ImportBeanDefinitionRegistrar 使用
+
+#### menu003 @Condition注解的使用
+> 1. @Conditional 注解可以实现只有在特定条件满足时才启用一些配置
+> 2. @ConditionalOnBean 容器中存在指定Bean，则生效
+> 3. @ConditionalOnMissingBean 容器中不存在指定Bean，则生效
+> 4. @ConditionalOnClass 容器中有指定类，则生效
+> 5. @ConditionalOnMissingClass 容器中没有指定类，则生效
+> 6. @ConditionalOnProperty 系统中指定的属性是否有指定的值
+> 7. @ConditionalOnWebApplication 当前是web环境，则生效
 
 ### 网络
 #### menu001 FeignClient的使用
