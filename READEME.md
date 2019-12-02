@@ -15,6 +15,12 @@ SpringBoot 整理总结
 > 3. 从外部配置文件(.properties)中取值
 > 4. 从配置文件中读取配置为静态变量
 
+#### menu002 @Import 导入普通的java类，并将其声明成一个bean
+
+> 三种将java类注入为IOC容器bean的方式
+>   1. 直接导入普通的 Java 类
+>   2. 配合自定义的 ImportSelector 使用
+>   3. 配合 ImportBeanDefinitionRegistrar 使用
 
 ### 网络
 #### menu001 FeignClient的使用
