@@ -7,6 +7,7 @@
         <module>basicgrammar</module>
         <module>network</module>
         <module>druid</module>
+        <module>spring</module>
     </modules>
 
     <parent>

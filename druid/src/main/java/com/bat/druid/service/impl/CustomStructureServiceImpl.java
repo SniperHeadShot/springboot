@@ -2,7 +2,7 @@ package com.bat.druid.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bat.commoncode.entity.CustomStructure;
-import com.bat.druid.config.DataSourceRoute;
+import com.bat.druid.config.DataSourceContextHolder;
 import com.bat.druid.dao.CustomStructureDao;
 import com.bat.druid.service.CustomStructureService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class CustomStructureServiceImpl implements CustomStructureService {
      */
     @Override
     public List<CustomStructure> getCustomStructureList(String dbFlag) {
-        DataSourceRoute.setRouteKey(dbFlag);
+        DataSourceContextHolder.setRouteKey(dbFlag);
         return customStructureDao.getCustomStructureList();
     }
 
@@ -48,7 +48,7 @@ public class CustomStructureServiceImpl implements CustomStructureService {
     @Override
     public boolean insertCustomStructure(String dbFlag, CustomStructure customStructure) {
         log.info("库[{}] 新增一条数据 ==> [{}]", dbFlag, JSONObject.toJSONString(customStructure));
-        DataSourceRoute.setRouteKey(dbFlag);
+        DataSourceContextHolder.setRouteKey(dbFlag);
         return customStructureDao.insertCustomStructure(customStructure) > 0;
     }
 }

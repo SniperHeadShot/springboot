@@ -1,40 +1,20 @@
 package com.bat.druid.config;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
+
 /**
- * 保存当前线程数据源的key
+ * 数据源配置
+ * spring 使用AbstractRoutingDataSource自定义动态数据源时的事务处理, 需要继承spring的AbstractRoutingDataSource定义自己的动态数据源，可以根据需要动态的切换不同数据库的数据源
  *
  * @author ZhengYu
- * @version 1.0 2019/12/10 11:29
+ * @version 1.0 2019/12/9 17:01
  **/
-public class DataSourceRoute {
+@Configuration
+public class DataSourceRoute extends AbstractRoutingDataSource {
 
-    private static ThreadLocal<String> routeKey = new ThreadLocal<>();
-
-    /**
-     * 获取当前线程的数据源路由的key
-     *
-     * @return java.lang.String
-     * @author ZhengYu
-     */
-    public static String getRouteKey() {
-        return routeKey.get();
-    }
-
-    /**
-     * 绑定当前线程数据源路由的key
-     *
-     * @author ZhengYu
-     */
-    public static void setRouteKey(String key) {
-        routeKey.set(key);
-    }
-
-    /**
-     * 删除当前线程数据源路由的key
-     *
-     * @author ZhengYu
-     */
-    public static void removeRouteKey() {
-        routeKey.remove();
+    @Override
+    protected Object determineCurrentLookupKey() {
+        return DataSourceContextHolder.getRouteKey();
     }
 }

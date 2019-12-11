@@ -1,9 +1,2 @@
-# mybatis
-mybatis:
-  type-aliases-package: com.gato.cloud.convergenceforward.entity
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    cache-enabled: true
-    useGeneratedKeys: true
-    defaultExecutorType: reuse
-    mapUnderscoreToCamelCase: true
+server:
+  port: 9000

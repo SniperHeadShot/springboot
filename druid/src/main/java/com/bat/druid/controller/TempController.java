@@ -2,7 +2,7 @@ package com.bat.druid.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bat.commoncode.entity.CustomStructure;
-import com.bat.druid.config.DataSourceRoute;
+import com.bat.druid.config.DataSourceContextHolder;
 import com.bat.druid.service.CustomStructureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +27,15 @@ public class TempController {
 
     @GetMapping("/db/test")
     public String test() {
-        DataSourceRoute.setRouteKey("test2");
-
+        String env;
+        if (RANDOM.nextBoolean()) {
+            env = "test1";
+        } else {
+            env = "test2";
+        }
         CustomStructure customStructure = new CustomStructure("zy" + RANDOM.nextInt(100), RANDOM.nextInt(100));
-        customStructureService.insertCustomStructure(null, customStructure);
-        List<CustomStructure> customStructureList = customStructureService.getCustomStructureList(null);
+        customStructureService.insertCustomStructure(env, customStructure);
+        List<CustomStructure> customStructureList = customStructureService.getCustomStructureList(env);
         return JSONObject.toJSONString(customStructureList);
     }
 }
