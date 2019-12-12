@@ -21,7 +21,7 @@ public class DataSourceConfig {
     @Bean("test1")
     @Primary
     public DruidDataSource dataSource1() {
-        return buildDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://192.168.9.102:3306/test1?characterEncoding=utf8&useSSL=false", "root", "123");
+        return buildDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://192.168.9.230:3306/test?characterEncoding=utf8&useSSL=false", "root", "nYd*4M]ipIv+");
     }
 
     @Bean("test2")

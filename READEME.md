@@ -4,6 +4,7 @@ SpringBoot 整理总结
 
 ## 目录
 * 基础语法[basicgrammar](#基础语法)
+* Druid整合Mybatis[druid](#Druid)
 * 网络[network](#网络)
 
 
@@ -30,7 +31,12 @@ SpringBoot 整理总结
 > 6. @ConditionalOnProperty 系统中指定的属性是否有指定的值
 > 7. @ConditionalOnWebApplication 当前是web环境，则生效
 
+### Druid
+
+> Druid 整合 Mybatis 实现运行时动态数据源切换
+
 ### 网络
+
 #### menu001 FeignClient的使用
 
 > 1. 已知服务地址，使用@FeignClient作为Http客户端去调用

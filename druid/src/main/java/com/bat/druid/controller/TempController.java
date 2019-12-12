@@ -1,41 +1,36 @@
 package com.bat.druid.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.bat.commoncode.entity.CustomStructure;
-import com.bat.druid.config.DataSourceContextHolder;
-import com.bat.druid.service.CustomStructureService;
+import com.bat.druid.po.UserInfo;
+import com.bat.druid.service.CustomUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Random;
 
 /**
- * TODO
+ * 测试主类
  *
  * @author ZhengYu
  * @version 1.0 2019/12/10 15:12
  **/
+@Slf4j
 @RestController
+@RequestMapping("/db")
 public class TempController {
 
-    private static final Random RANDOM = new Random();
-
     @Autowired
-    private CustomStructureService customStructureService;
+    private CustomUserService customUserService;
 
-    @GetMapping("/db/test")
-    public String test() {
-        String env;
-        if (RANDOM.nextBoolean()) {
-            env = "test1";
-        } else {
-            env = "test2";
-        }
-        CustomStructure customStructure = new CustomStructure("zy" + RANDOM.nextInt(100), RANDOM.nextInt(100));
-        customStructureService.insertCustomStructure(env, customStructure);
-        List<CustomStructure> customStructureList = customStructureService.getCustomStructureList(env);
-        return JSONObject.toJSONString(customStructureList);
+    @GetMapping("/user/list")
+    public String testGet(@RequestParam(value = "username", required = false) String username) {
+        List<UserInfo> result = customUserService.getCustomUserList("test1", username);
+        return result == null || result.size() == 0 ? "failure" : "success";
+    }
+
+    @PostMapping("/user/{count}")
+    public String testAdd(@PathVariable Long count) {
+        boolean dbFlag = customUserService.insertCustomUser("test1", count);
+        return dbFlag ? "success" : "failure";
     }
 }
