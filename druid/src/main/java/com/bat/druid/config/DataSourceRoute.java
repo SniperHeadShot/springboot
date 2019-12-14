@@ -1,6 +1,5 @@
 package com.bat.druid.config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
@@ -10,7 +9,6 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
  * @author ZhengYu
  * @version 1.0 2019/12/9 17:01
  **/
-@Configuration
 public class DataSourceRoute extends AbstractRoutingDataSource {
 
     @Override

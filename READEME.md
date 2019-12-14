@@ -6,6 +6,7 @@ SpringBoot 整理总结
 * 基础语法[basicgrammar](#基础语法)
 * Druid整合Mybatis[druid](#Druid)
 * 网络[network](#网络)
+* Spring[spring](#Spring)
 
 
 ### 基础语法
@@ -35,9 +36,17 @@ SpringBoot 整理总结
 
 > Druid 整合 Mybatis 实现运行时动态数据源切换
 
+```
+-DdataSourceMsg=[{\"host\":\"192.168.9.230\",\"port\":3306,\"username\":\"root\",\"password\":\"nYd*4M]ipIv+\",\"aimDb\":\"test\"},{\"host\":\"192.168.9.102\",\"port\":3306,\"username\":\"root\",\"password\":\"nYd*4M]ipIv+\",\"aimDb\":\"test\"}]
+```
+
 ### 网络
 
 #### menu001 FeignClient的使用
 
 > 1. 已知服务地址，使用@FeignClient作为Http客户端去调用
 > 2. 未知服务地址，需要动态获取服务地址，然后在使用@FeignClient作为Http客户端去调用
+
+### Spring
+
+#### menu001 
